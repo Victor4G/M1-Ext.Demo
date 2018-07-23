@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+	<reference name="head">		
+		<action method="addItem"><type>skin_css</type><name>css/newsletterpopup.css</name><params/></action>
+		<action method="addJs" ifconfig="newsletter/popup_subscription/add_js"><script>jquery_1_4_2_min.js</script></action>
+		<action method="addItem"><type>skin_js</type><name>js/newsletterpopup.js</name><params/></action>
+	</reference>
+	<reference name="footer">
+        	<block type="page/html_head" name="newssubscribers" template="newsletterpopup/newsletterpopup.phtml" />
+    	</reference>
+   </default>
+</layout>

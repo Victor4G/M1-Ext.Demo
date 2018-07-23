@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VJP_Newsletterpopup>
+            <version>1.1.0</version>
+        </VJP_Newsletterpopup>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <newsletterpopup>
+                    <file>newsletterpopup.xml</file>
+                </newsletterpopup>
+            </updates>
+        </layout>
+	<routers>
+		<newsletter>
+		<args>
+		<modules>
+			<vjp_newsletterpopup before="Mage_Newsletter_SubscriberController">VJP_Newsletterpopup_Frontend_Newsletter</vjp_newsletterpopup>
+		</modules>
+		</args>
+		</newsletter>
+	</routers>
+   </frontend>
+  <global>
+        <models>
+            <newsletterpopup_adminhtml>
+                <class>VJP_Newsletterpopup_Adminhtml_Model</class>
+            </newsletterpopup_adminhtml>
+        </models>
+    </global>
+    <default>
+	<newsletter>
+		<popup_subscription>
+			<enable_popup>1</enable_popup>
+			<popup_header1>Join our mailing list</popup_header1>
+			<popup_header2>Let's stick together</popup_header2>
+			<popup_header3>Be the first to hear about exclusive items, New catalogs and special promotions</popup_header3>
+			<popup_position>mc</popup_position>
+			<add_js>1</add_js>
+			<cookie_name>newsletterpopup</cookie_name>
+			<cookie_timeout>1</cookie_timeout>
+			<enable_shadow>1</enable_shadow>
+			<fade_close>2</fade_close>
+			<popup_close>1</popup_close>
+		</popup_subscription>
+	</newsletter>
+    </default>
+</config>

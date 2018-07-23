@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VJP_Newsletterpopup>
+            <active>true</active>
+            <codePool>community</codePool>
+        </VJP_Newsletterpopup>
+    </modules>
+</config> 
+

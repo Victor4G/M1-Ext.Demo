@@ -1,0 +1,39 @@
+<?php if(Mage::getStoreConfig('newsletter/popup_subscription/enable_popup', Mage::app()->getStore())): ?>
+<script type="text/javascript">
+    VJPNewsSubscribers.setCookieLiveTime('<?php echo Mage::getStoreConfig('newsletter/popup_subscription/cookie_timeout', Mage::app()->getStore())?>');
+    VJPNewsSubscribers.setCookieName('<?php echo Mage::getStoreConfig('newsletter/popup_subscription/cookie_name', Mage::app()->getStore())?>');
+    VJPNewsSubscribers.setBaseUrl('<?php echo $this->getBaseUrl(); ?>');
+    VJPNewsSubscribers.setPosition('<?php echo Mage::getStoreConfig('newsletter/popup_subscription/popup_position', Mage::app()->getStore())?>');
+    VJPNewsSubscribers.setTimeglow('<?php echo Mage::getStoreConfig('newsletter/popup_subscription/fade_close', Mage::app()->getStore())?>');
+</script>
+<div id="nl_background_layer" style="display:none;">
+	<div id="nl_box_layer">
+    <div class="border">
+	<button type="button" class="button"  id="nl_box_close" title="<?php echo $this->__('Close') ?>"><p><img src="<?php echo $this->getSkinUrl('images/newsletterpopup/close-popup.png')?>"></p></button>				
+        <div id="nl_box_block_3">
+	    <h2><?php echo Mage::getStoreConfig('newsletter/popup_subscription/popup_header1', Mage::app()->getStore())?></h2>
+	  <h3><?php echo Mage::getStoreConfig('newsletter/popup_subscription/popup_header2', Mage::app()->getStore())?></h3>
+        </div>
+        <div class="nl_box_lines"></div>
+        <div id="nl_box_subscribe">
+	    <div id="nl_box_subscribe_msg"><?php echo Mage::getStoreConfig('newsletter/popup_subscription/popup_header3', Mage::app()->getStore())?></div>
+            <div id="nl_box_subscribe_response_success"></div>
+            <div id="nl_box_subscribe_form">
+	    <div class="v-fix">
+		<input type="hidden" name="hidden_shadow" id="hidden_shadow" value="<?php echo Mage::getStoreConfig('newsletter/popup_subscription/enable_shadow', Mage::app()->getStore())?>" />
+		<input type="hidden" name="hidden_close" id="hidden_close" value="<?php echo Mage::getStoreConfig('newsletter/popup_subscription/popup_close', Mage::app()->getStore())?>" />
+		<input name="email" type="text" id="popup_newsletter" value="<?php echo $this->__('Enter your email address') ?>" onclick="this.value=='<?php echo $this->__('Enter your email address') ?>'?this.value='':''" onblur="this.value==''?this.value='<?php echo $this->__('Enter your email address') ?>':''" class="input-text required-entry validate-email" /></div>
+            <div id="nl_box_subscribe_response_error"></div>
+		<button type="submit" id="nl_submit" class="button" title="<?php echo $this->__('Subscribe') ?>"><?php echo $this->__('Subscribe') ?></button>
+          </div>
+        </div>
+		<div id="nl_box_subscribe_response_bmsg"><i>*Be sure to check your inbox for message from us.</i></div>
+       </div>
+  </div>
+</div>
+        
+<script type="text/javascript">
+    var newsletterSubscriberFormDetail = new VarienForm('popup_newsletter-validate-detail');
+</script>
+
+<?php endif;?>
